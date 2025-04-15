@@ -1,4 +1,4 @@
-name: visualize
+version: "3.3"
 services:
   react-app:
     depends_on:
@@ -12,7 +12,7 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
     env_file:
-      - path: .env
+      - .env
     command: npm run dev
     volumes:
       - ./react/app/src:/code/src
@@ -31,7 +31,7 @@ services:
       - UVICORN_CMD=uvicorn main:app --reload
     command: uvicorn main:app --host 0.0.0.0 --port ${BACKEND_PORT} --reload
     env_file:
-      - path: .env
+      - .env
   postgis:
     image: postgis/postgis:latest
     environment:

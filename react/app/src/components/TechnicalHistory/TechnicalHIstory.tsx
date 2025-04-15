@@ -8,7 +8,7 @@ export function TechnicalHistory() {
 
     const [year, setYear] = useState(2025);
     const [feature, setFeature] = useState('battery');
-    const violin_chart_url = `http://localhost:8080/api/violin_chart/${feature}/${year}`;
+    const violin_chart_url = `http://host.docker.internal:8080/api/violin_chart/${feature}/${year}`;
 
     return <div className={"MainContainer"}>
         <div className={"TitleContainer"}>
@@ -16,7 +16,7 @@ export function TechnicalHistory() {
         </div>
         <div className={"BodyContainer"}>
             <div className={classes.GraphContainer}>
-                <PlotFromJson url={"http://localhost:8080/api/parallel_coordinates"}/>
+                <PlotFromJson url={"http://host.docker.internal:8080/api/parallel_coordinates"}/>
             </div>
             <div className={classes.GraphContainer}>
                 <div className={classes.FilterContainer}>
