@@ -1,0 +1,19 @@
+
+
+
+.GraphContainer {
+    width: 33%;
+    height: 100%;
+}
+
+#TreeMapContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FilterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

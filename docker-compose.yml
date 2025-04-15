@@ -1,0 +1,51 @@
+name: visualize
+services:
+  react-app:
+    depends_on:
+      - fastapi-app
+    image: visualize/react-app
+    build: 
+      context: ./react
+      dockerfile: Dockerfile
+    ports:
+      - "${FRONTEND_PORT}:5173"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    env_file:
+      - path: .env
+    command: npm run dev
+    volumes:
+      - ./react/app/src:/code/src
+  fastapi-app:
+    depends_on:
+      - postgis
+    image: visualize/fastapi-app
+    build: 
+      context: ./fastapi
+      dockerfile: Dockerfile
+    ports: 
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    volumes:
+      - ./fastapi/app:/code
+    environment:
+      - UVICORN_CMD=uvicorn main:app --reload
+    command: uvicorn main:app --host 0.0.0.0 --port ${BACKEND_PORT} --reload
+    env_file:
+      - path: .env
+  postgis:
+    image: postgis/postgis:latest
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_DB: "${POSTGRES_DB}"
+    env_file:
+      - .env
+    volumes:
+      - ./postgis/init:/docker-entrypoint-initdb.d
+    ports:
+      - "${POSTGRES_PORT}:5432"
+
+
+
+
+

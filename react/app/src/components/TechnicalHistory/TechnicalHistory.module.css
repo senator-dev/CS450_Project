@@ -1,0 +1,30 @@
+
+
+.GraphContainer {
+    width: 50%;
+    height: 100%;
+}
+
+
+
+.FilterContainer {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.SubContainer {
+    height: 80%;
+    width: 100%;
+}
+
+.Select {
+    width: 20%;
+}
+
+.Slider {
+    width: 50%;
+}
