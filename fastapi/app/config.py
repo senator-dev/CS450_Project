@@ -6,7 +6,7 @@ import pandas as pd
 
 def get_data(q):
     with psycopg.connect(
-        host="host.docker.internal",
+        host="54.86.127.160",
         port=os.environ["POSTGRES_PORT"],
         dbname=os.environ["POSTGRES_DB"],
         user=os.environ["POSTGRES_USER"],
