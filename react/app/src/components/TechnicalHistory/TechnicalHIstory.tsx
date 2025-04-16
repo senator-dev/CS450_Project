@@ -8,7 +8,7 @@ export function TechnicalHistory() {
 
     const [year, setYear] = useState(2025);
     const [feature, setFeature] = useState('battery');
-    const violin_chart_url = `http://184.73.59.152:8000/api/violin_chart/${feature}/${year}`;
+    const violin_chart_url = `${import.meta.env.VITE_API_URL}/api/violin_chart/${feature}/${year}`;
 
     return <div className={"MainContainer"}>
         <div className={"TitleContainer"}>
@@ -16,7 +16,7 @@ export function TechnicalHistory() {
         </div>
         <div className={"BodyContainer"}>
             <div className={classes.GraphContainer}>
-                <PlotFromJson url={"http://184.73.59.152:8000/api/parallel_coordinates"}/>
+                <PlotFromJson url={"${import.meta.env.VITE_API_URL}/api/parallel_coordinates"}/>
             </div>
             <div className={classes.GraphContainer}>
                 <div className={classes.FilterContainer}>
