@@ -50,6 +50,7 @@ data = data[(data['Company Name'] != 'Nokia') & (data['Model Name'] != 'T21')]
 data['Front Camera (MP)'] = data['Front Camera'].apply(try_func)
 data['Back Camera (MP)'] = data['Back Camera'].apply(try_func)
 
+print(data)
 company_colors = {
     'Apple': "rgb(255, 99, 71)",        # Tomato
     'Samsung': "rgb(255, 140, 0)",      # Dark Orange
