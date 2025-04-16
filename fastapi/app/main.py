@@ -12,8 +12,10 @@ from plotly.subplots import make_subplots
 app = FastAPI()
 origins = [
     "http://localhost:5173",
-    "localhost:5173",
-    "13.218.146.115:5173/"
+    "http://172.31.23.201:5173",
+    "http://13.218.146.115:5173"
+    "172.31.23.201:5173",
+    "localhost:5173"
 ]
 
 app.add_middleware(
