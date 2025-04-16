@@ -10,10 +10,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 90%;
 }
 
 .FilterContainer {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 10px;
 }

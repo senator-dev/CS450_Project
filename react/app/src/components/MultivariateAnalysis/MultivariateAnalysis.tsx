@@ -18,7 +18,6 @@ export function MultivariateAnalysis() {
         </div>
         <div className={"BodyContainer"}>
             <div className={classes.GraphContainer}>
-                christopher
                 <div className={classes.FilterContainer}>
                     <Select
                         label="X"
