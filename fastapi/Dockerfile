@@ -1,9 +1,11 @@
-FROM python:3.9
+FROM python:3.9-slim
 
 WORKDIR /code
  
+COPY ./app/requirements.txt .
+
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
+
 COPY ./app .
-
-RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
-
 
