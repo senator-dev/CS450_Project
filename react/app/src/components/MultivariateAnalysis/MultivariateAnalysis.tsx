@@ -9,8 +9,8 @@ export function MultivariateAnalysis() {
     const [xValue, setXValue] = useState('battery');
     const [yValue, setYValue] = useState('ram');
     const [zValue, setZValue] = useState('weight');
-    const scatterUrl = `http://localhost:8080/api/scatter_3d/${xValue}/${yValue}/${zValue}`;
-    const correlationHeatmapUrl = `http://54.86.127.160:8080/api/correlation_heatmap`;
+    const scatterUrl = `${import.meta.env.VITE_API_URL}/api/scatter_3d/${xValue}/${yValue}/${zValue}`;
+    const correlationHeatmapUrl = `http://54.86.127.160:8000/api/correlation_heatmap`;
 
     return <div className={"MainContainer"}>
         <div className={"TitleContainer"}>
