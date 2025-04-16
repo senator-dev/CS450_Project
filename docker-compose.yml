@@ -13,7 +13,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
     env_file:
       - .env
-    command: serve -s dist -l 80
+    command: npm run dev
     volumes:
       - ./react/app/src:/code/src
   fastapi-app:
