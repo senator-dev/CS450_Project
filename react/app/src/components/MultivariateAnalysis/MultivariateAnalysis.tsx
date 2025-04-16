@@ -9,8 +9,8 @@ export function MultivariateAnalysis() {
     const [xValue, setXValue] = useState('battery');
     const [yValue, setYValue] = useState('ram');
     const [zValue, setZValue] = useState('weight');
-    const scatterUrl = `${import.meta.env.VITE_API_URL}:8080/api/scatter_3d/${xValue}/${yValue}/${zValue}`;
-    const correlationHeatmapUrl = `${import.meta.env.VITE_API_URL}:8080/api/correlation_heatmap`;
+    const scatterUrl = `${import.meta.env.VITE_API_URL}/api/scatter_3d/${xValue}/${yValue}/${zValue}`;
+    const correlationHeatmapUrl = `${import.meta.env.VITE_API_URL}/api/correlation_heatmap`;
 
     return <div className={"MainContainer"}>
         <div className={"TitleContainer"}>
@@ -18,6 +18,7 @@ export function MultivariateAnalysis() {
         </div>
         <div className={"BodyContainer"}>
             <div className={classes.GraphContainer}>
+                christopher
                 <div className={classes.FilterContainer}>
                     <Select
                         label="X"

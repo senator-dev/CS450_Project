@@ -16,7 +16,7 @@ export function TechnicalHistory() {
         </div>
         <div className={"BodyContainer"}>
             <div className={classes.GraphContainer}>
-                <PlotFromJson url={"${import.meta.env.VITE_API_URL}/api/parallel_coordinates"}/>
+                <PlotFromJson url={`${import.meta.env.VITE_API_URL}/api/parallel_coordinates`}/>
             </div>
             <div className={classes.GraphContainer}>
                 <div className={classes.FilterContainer}>
