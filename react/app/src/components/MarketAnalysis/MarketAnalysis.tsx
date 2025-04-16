@@ -13,9 +13,9 @@ export function MarketAnalysis() {
     
 
     const [feature, setFeature] = useState('launch_price_usa');
-    const treemap_url = `http://localhost:8000/api/treemap/${feature}`;
-    const stacked_bar_price_url = `http://localhost:8000/api/stacked_bar_price/${feature}`;
-    const pie_chart_url = `http://localhost:8000/api/pie_company_counts`;
+    const treemap_url = `${import.meta.env.VITE_API_URL}/api/treemap/${feature}`;
+    const stacked_bar_price_url = `${import.meta.env.VITE_API_URL}/api/stacked_bar_price/${feature}`;
+    const pie_chart_url = `${import.meta.env.VITE_API_URL}/api/pie_company_counts`;
 
     return <div className={"MainContainer"}>
         <div className={"TitleContainer"}>
