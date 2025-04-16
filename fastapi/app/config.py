@@ -3,11 +3,10 @@ import psycopg
 import pandas as pd
 
 
-
 def get_data(q):
     with psycopg.connect(
-        host="13.218.146.115",
-        port=os.environ["POSTGRES_PORT"],
+        host="172.31.23.201",
+        port=5434,
         dbname=os.environ["POSTGRES_DB"],
         user=os.environ["POSTGRES_USER"],
         password=os.environ["POSTGRES_PASSWORD"]
